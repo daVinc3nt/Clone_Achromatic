@@ -97,7 +97,7 @@ export default function Sidebar() {
       </nav>
 
       {/* Favorites */}
-      <div className="mb-6 px-2 w-fit">
+      <div className="mb-6 w-full">
         <p
           className={clsx(
             "text-sm font-semibold text-muted-foreground mb-3 transition-opacity duration-300",
@@ -107,14 +107,15 @@ export default function Sidebar() {
           Favorites
         </p>
         <div className="flex flex-col gap-4 mt-5">
-          <div className="flex items-center gap-3 w-full">
-            <Image
-              className="rounded-md"
-              alt="Airbnb"
-              src="https://demo.achromatic.dev/api/contact-images/d1f1feea-13d0-467b-9ee6-e9e1d3dd05c1?v=51bbe674c4608776218704a0bdc00a18082affe42b946db6d3c80cb579f1829e"
-              width={18}
-              height={18}
-            />
+          <div className="flex hover:cursor-pointer items-center gap-3 p-2 rounded-md hover:bg-accent hover:text-foreground transition-colors" >
+            <div className="w-[18px] h-[18px] relative shrink-0">
+              <Image
+                className="rounded-md object-cover"
+                alt="Airbnb"
+                src="https://demo.achromatic.dev/api/contact-images/d1f1feea-13d0-467b-9ee6-e9e1d3dd05c1?v=51bbe674c4608776218704a0bdc00a18082affe42b946db6d3c80cb579f1829e"
+                fill
+              />
+            </div>
             <span
               className={clsx("text-sm font-medium transition-opacity duration-300", {
                 "opacity-0": !isOpen,
@@ -123,7 +124,7 @@ export default function Sidebar() {
               Airbnb
             </span>
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex hover:cursor-pointer items-center gap-3 p-2 rounded-md hover:bg-accent hover:text-foreground transition-colors">
             <GoogleIcon size={18} />
             <span
               className={clsx("text-sm font-medium transition-opacity duration-300", {
@@ -133,7 +134,7 @@ export default function Sidebar() {
               Google
             </span>
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex hover:cursor-pointer items-center gap-3 p-2 rounded-md hover:bg-accent hover:text-foreground transition-colors">
             <MicrosoftIcon size={18} />
             <span
               className={clsx("text-sm font-medium transition-opacity duration-300", {
@@ -175,13 +176,15 @@ export default function Sidebar() {
         <Popover>
           <PopoverTrigger>
             <div className="rounded-md flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground hover:bg-accent px-2 py-2">
-              <Image
-                className="rounded-full"
-                alt="User"
-                src={session?.avaUrl || "/user.jpg"} // Use session avatar or fallback
-                width={30}
-                height={30}
-              />
+              
+                <div className="w-[20px] h-[20px] relative shrink-0">
+                  <Image
+                    className="rounded-full object-cover"
+                    alt="User"
+                    src={session?.avaUrl || "/user.jpg"} // Use session avatar or fallback
+                    fill
+                  />
+                </div>
               <span
                 className={clsx("transition-opacity duration-300", {
                   "opacity-0": !isOpen,

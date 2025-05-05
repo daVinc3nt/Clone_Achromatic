@@ -10,6 +10,7 @@ export const GoogleIcon = ({
     width={size}
     height={size}
     {...props}
+    className="shrink-0"
   >
     <path
       fill="#EA4335"

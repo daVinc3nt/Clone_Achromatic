@@ -21,12 +21,18 @@ export default function LeadGenerationCard() {
       <CardContent>
         <ul className="space-y-2">
           {mostVisitedContacts.map((contact, index) => (
-            <li key={index} className="flex justify-between items-center">
+            <li
+              key={index}
+              className="group flex justify-between items-center p-2 rounded-md hover:bg-accent hover:text-foreground hover:cursor-pointer transition-colors"
+            >
               <div className="flex items-center gap-2">
                 <span>{contact.icon}</span>
                 <span>{contact.name}</span>
               </div>
-              <span>{contact.visits}</span>
+              <span className="transition-transform duration-300">
+                <span className="hidden group-hover:inline">→</span>
+                <span className="group-hover:hidden">{contact.visits}</span>
+              </span>
             </li>
           ))}
         </ul>

@@ -10,6 +10,7 @@ export const MicrosoftIcon = ({
     width={size}
     height={size}
     {...props}
+    className="shrink-0"
   >
     <path fill="#F25022" d="M4 4h20v20H4z" />
     <path fill="#7FBA00" d="M24 4h20v20H24z" />
