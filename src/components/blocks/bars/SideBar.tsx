@@ -42,7 +42,7 @@ export default function Sidebar() {
         "hidden lg:flex fixed z-40 inset-y-0 left-0 bg-background Q overflow-x-hidden border-r p-4 flex-col transition-all duration-300",
         {
           "w-64": isOpen, // Full width when open
-          "w-16": !isOpen, // Compact width when collapsed
+          "w-[4.1rem]": !isOpen, // Compact width when collapsed
         }
       )}
     >
